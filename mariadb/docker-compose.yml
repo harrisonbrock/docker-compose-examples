@@ -1,0 +1,17 @@
+    version: '3.7'
+    services: 
+      # Name of the service.
+      database:
+        # Container name.
+        container_name: docker-local-mariadb
+        # Image to use.
+        image: mariadb
+        volumes:
+          # Where to save data too.
+          - "./data:/var/lib/mysql"
+        restart: always
+        ports:
+          # Ports to use.
+          - 3306:3306
+        environment:
+          MYSQL_ROOT_PASSWORD: 0123456789
